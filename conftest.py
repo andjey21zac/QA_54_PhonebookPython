@@ -1,6 +1,10 @@
 import pytest
 from selenium import webdriver
 
+from page.login_page import LoginPage
+from tests.test_login import VALID_EMAIL
+from tests.test_registration import VALID_PASSWORD
+
 
 @pytest.fixture
 def driver():
@@ -12,3 +16,16 @@ def driver():
     yield driver
 
     driver.quit()
+
+
+@pytest.fixture
+def authenticated(driver):
+    login_page = LoginPage(driver)
+    login_page.open_login_page()
+    login_page.fill_email_field(VALID_EMAIL)
+    login_page.fill_password_field(VALID_PASSWORD)
+    login_page.click_on_login_button()
+
+    return driver
+
+
