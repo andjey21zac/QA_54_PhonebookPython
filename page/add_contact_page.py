@@ -23,29 +23,35 @@ class ContactPage(BasePage):
         self.click(self.ADD_CONTACT_BUTTON)
 
     def fill_name(self,name):
-        self.driver.find_element(*self.NAME_INPUT).clear()
-        self.driver.find_element(*self.NAME_INPUT).send_keys()
+        # self.driver.find_element(*self.NAME_INPUT).clear()
+        # self.driver.find_element(*self.NAME_INPUT).send_keys()
+        self.fill(self.NAME_INPUT,name)
 
-    def fill_last_name(self,name):
-        self.driver.find_element(*self.LAST_NAME_INPUT).clear()
-        self.driver.find_element(*self.LAST_NAME_INPUT).send_keys()
+    def fill_last_name(self,last_name):
+        # self.driver.find_element(*self.LAST_NAME_INPUT).clear()
+        # self.driver.find_element(*self.LAST_NAME_INPUT).send_keys()
+        self.fill(self.LAST_NAME_INPUT,last_name)
+
+    def fill_phone(self, phone):
+        # self.driver.find_element(*self.PHONE_INPUT).clear()
+        # self.driver.find_element(*self.PHONE_INPUT).send_keys()
+            self.fill(self.PHONE_INPUT,phone)
+
+    def fill_email(self, email):
+        # self.driver.find_element(*self.EMAIL_INPUT).clear()
+        # self.driver.find_element(*self.EMAIL_INPUT).send_keys()
+        self.fill(self.EMAIL_INPUT, email)
 
 
-    def fill_phone(self, name):
-        self.driver.find_element(*self.PHONE_INPUT).clear()
-        self.driver.find_element(*self.PHONE_INPUT).send_keys()
+    def fill_address(self, address):
+        # self.driver.find_element(*self.ADDRESS_INPUT).clear()
+        # self.driver.find_element(*self.ADDRESS_INPUT).send_keys()
+        self.fill(self.ADDRESS_INPUT,address)
 
-    def fill_email(self, name):
-        self.driver.find_element(*self.EMAIL_INPUT).clear()
-        self.driver.find_element(*self.EMAIL_INPUT).send_keys()
-
-    def fill_address(self, name):
-        self.driver.find_element(*self.ADDRESS_INPUT).clear()
-        self.driver.find_element(*self.ADDRESS_INPUT).send_keys()
-
-    def fill_description(self, name):
-        self.driver.find_element(*self.DESCRIPTION_INPUT).clear()
-        self.driver.find_element(*self.DESCRIPTION_INPUT).send_keys()
+    def fill_description(self, description):
+        # self.driver.find_element(*self.DESCRIPTION_INPUT).clear()
+        # self.driver.find_element(*self.DESCRIPTION_INPUT).send_keys()
+        self.fill(self.DESCRIPTION_INPUT,description)
 
     def fill_contact_form(self,contact):
         self.fill_name(contact.name)
@@ -66,6 +72,8 @@ class ContactPage(BasePage):
 
     def open_contact_details_card(self,phone):
         card = self.driver.find_element(By.XPATH, f"//h3[contains(text(),'{phone}')]/..").click()
+
+
 
 
 

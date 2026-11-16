@@ -18,7 +18,7 @@ class RegistrationPage(BasePage):
 
     def open_registration_page(self):
         # self.driver.find_element(*self.REGISTRATION_LINK).click()
-        self.fill(self.REGISTRATION_LINK)
+        self.click(self.REGISTRATION_LINK)
 
     def fill_email_field(self,email):
         # self.driver.find_element(*self.EMAIL_INPUT).clear()
