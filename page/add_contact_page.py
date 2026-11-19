@@ -73,6 +73,11 @@ class ContactPage(BasePage):
     def open_contact_details_card(self,phone):
         card = self.driver.find_element(By.XPATH, f"//h3[contains(text(),'{phone}')]/..").click()
 
+    def create_contact_steps(self, contact):
+        self.open_contact_form()
+        self.fill_contact_form(contact)
+        self.submit_contact()
+
 
 
 

@@ -1,5 +1,5 @@
 from page.registration_page import  RegistrationPage
-VALID_EMAIL = "andrey.zats503@gmail.com"
+VALID_EMAIL = "andrey.zats5032@gmail.com"
 VALID_PASSWORD = "Andrey12345$"
 INVALID_EMAIL = "andjey.zacgmail.com"
 INVALID_PASSWORD="Andrey12345"
